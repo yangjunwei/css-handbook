@@ -53,7 +53,7 @@
 		<div class="cont">
 			<p><strong>text-align-last</strong>：auto | start | end | left | right | center | justify</p>
 			<p><strong>默认值</strong>：<mark class="defaultvalue">auto</mark></p>
-			<p><strong>适用于</strong>：块元素</p>
+			<p><strong>适用于</strong>：块容器</p>
 			<p><strong>继承性</strong>：有</p>
 			<p><strong>动画性</strong>：否</p>
 			<p><strong>计算值</strong>：指定值</p>
@@ -85,11 +85,11 @@
 		<div class="cont">
 			<strong>设置或检索一个块内的最后一行（包括块内仅有一行文本的情况，这时既是第一行也是最后一行）或者被强制打断的行的对齐方式</strong>
 			<ul>
-				<li>如果某一行同时也是块内的第一行或者第一行但后面紧跟着强制换行，除非显示的指定 <a href="text-align.htm">text-align</a> 第一行对齐方式（值 'start end'），否则 text-align-last 将会覆盖 <a href="text-align.htm">text-align</a>；</li>
-				<li>如果 auto 值被指定，内容的对齐方式将依据 <a href="text-align.htm">text-align</a> 的设定，除非 <a href="text-align.htm">text-align</a> 设置为justify；</li>
-				<li class="g-color-light">作为IE的私有属性之一，IE5.5率先实现了 text-align-last ，后期被w3c采纳成标准属性；</li>
+				<li>如果某一行同时也是块内的第一行或者第一行但后面紧跟着强制换行，除非显示的指定 &lt;' <a href="text-align.htm">text-align</a> '&gt; 第一行对齐方式（值 'start end'），否则 &lt;' text-align-last '&gt; 将会覆盖 &lt;' <a href="text-align.htm">text-align</a> '&gt;；</li>
+				<li>如果<code class="incode">auto</code>值被指定，内容的对齐方式将依据 &lt;' <a href="text-align.htm">text-align</a> '&gt; 的设定，除非 &lt;' <a href="text-align.htm">text-align</a> '&gt; 设置为<code class="incode">justify</code>；</li>
+				<li class="g-color-light">作为IE的私有属性之一，IE5.5率先实现了 &lt;' text-align-last '&gt;，后期被w3c采纳成标准属性；</li>
 				<li class="g-color-light">IE7及以下浏览器只实现了块内最后一行的对齐方式，没有处理被强制打断的行的对齐方式，从IE8开始，这两种形式的行对齐都被支持；</li>
-				<li class="g-color-light">IE浏览器下，如果 text-align-last 要生效，必须先定义 <a href="text-align.htm">text-align</a> 为justify；</li>
+				<li class="g-color-light">IE浏览器下，如果 &lt;' text-align-last '&gt; 要生效，必须先定义 &lt;' <a href="text-align.htm">text-align</a> '&gt; 为<code class="incode">justify</code>；</li>
 				<li>查看 <a href="http://demo.doyoe.com/css3/justify/justify-form.htm" class="external" rel="external" target="_blank">form表单标签名两端对齐效果demo</a></li>
 				<li>对应的脚本特性为<strong>textAlignLast</strong>。</li>
 			</ul>
@@ -106,28 +106,48 @@
 			<table class="g-data">
 				<thead>
 					<tr>
-						<th><a href="#title" title="查看本文档测试时所用浏览器版本">支持版本</a>\类型</th>
-						<th><span class="browser-ie">IE</span></th>
-						<th><span class="browser-firefox">Firefox</span></th>
-						<th><span class="browser-safari">Safari</span></th>
-						<th><span class="browser-chrome">Chrome</span></th>
-						<th><span class="browser-opera">Opera</span></th>
+						<th>Values</th>
+						<th>IE</th>
+						<th>Firefox</th>
+						<th>Chrome</th>
+						<th>Safari</th>
+						<th>Opera</th>
+						<th>iOS Safari</th>
+						<th>Android Browser</th>
+						<th>Android Chrome</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<th>版本</th>
-						<td class="partsupport">6.0-11.0 <sup><a href="#support1">#1</a></sup></td>
-						<td class="support">12.0-28.0 <sup class="fix">-moz-</sup></td>
-						<td class="unsupport">1.0-7.0</td>
-						<td class="unsupport">1.0-31.0</td>
-						<td class="unsupport">1.0-18.0</td>
+						<td rowspan="2"><strong>Basic Support</strong></td>
+						<td class="support" rowspan="2">6.0+</td>
+						<td class="unsupport">2.0-11.0</td>
+						<td class="unsupport" rowspan="2">4.0-41.0</td>
+						<td class="unsupport" rowspan="2">6.0-8.0</td>
+						<td class="unsupport" rowspan="2">15.0-27.0</td>
+						<td class="unsupport" rowspan="2">6.0-8.3</td>
+						<td class="unsupport" rowspan="2">2.1-4.4.4</td>
+						<td class="unsupport" rowspan="2">18.0-40.0</td>
+					</tr>
+					<tr>
+						<td class="support">12.0-37.0 <sup class="fix">-moz-</sup></td>
+					</tr>
+					<tr>
+						<td rowspan="2">start | end</td>
+						<td class="unsupport" rowspan="2">6.0-11.0</td>
+						<td class="unsupport">2.0-11.0</td>
+						<td class="unsupport" rowspan="2">4.0-41.0</td>
+						<td class="unsupport" rowspan="2">6.0-8.0</td>
+						<td class="unsupport" rowspan="2">15.0-27.0</td>
+						<td class="unsupport" rowspan="2">6.0-8.3</td>
+						<td class="unsupport" rowspan="2">2.1-4.4.4</td>
+						<td class="unsupport" rowspan="2">18.0-40.0</td>
+					</tr>
+					<tr>
+						<td class="support">12.0-37.0 <sup class="fix">-moz-</sup></td>
 					</tr>
 				</tbody>
 			</table>
-			<ol class="support-info">
-				<li id="support1">不支持：start | end。</li>
-			</ol>
 		</div>
 	</section>
 	<section id="example" class="g-mod g-attr">

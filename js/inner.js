@@ -286,7 +286,8 @@ if (!Global.isLocal && Global.name) {
 					'letter-spacing' : [],
 					'text-indent' : [],
 					'vertical-align' : [],
-					'line-height' : []
+					'line-height' : [],
+					'text-size-adjust' : []
 				},
 				'text-decoration' : {
 					'index' : ['文本装饰(Text Decoration)','其它文本装饰属性'],
@@ -392,7 +393,11 @@ if (!Global.isLocal && Global.name) {
 				'transform' : {
 					'index' : ['变换(Transform)','其它变换属性参考'],
 					'transform' : [],
-					'transform-origin' : []
+					'transform-origin' : [],
+					'transform-style' : [],
+					'perspective' : [],
+					'perspective-origin' : [],
+					'backface-visibility' : []
 				},
 				'transition' : {
 					'index' : ['过渡(Transition)','其它过渡属性参考'],
@@ -463,7 +468,9 @@ if (!Global.isLocal && Global.name) {
 					'text-fill-color' : [],
 					'text-stroke' : [],
 					'text-stroke-width' : [],
-					'text-stroke-color' : []
+					'text-stroke-color' : [],
+					'tap-highlight-color' : [],
+					'user-drag' : []
 				}
 			},
 
@@ -476,7 +483,8 @@ if (!Global.isLocal && Global.name) {
 				'@media' : [],
 				'@font-face' : [],
 				'@page' : [],
-				'@keyframes' : []
+				'@keyframes' : [],
+				'@supports' : []
 			},
 
 			selectors : {
@@ -839,7 +847,7 @@ if (!Global.isLocal && Global.name) {
 		$('#rights').append(testBrowser);
 
 		//在页面的的最后增加copyright模块
-		var copyright = '<p class="copyright">Copyright © 2006-2014 <a href="http://www.doyoe.com/" rel="external" target="_blank">Doyoe</a>. All Rights Reserved</p>'
+		var copyright = '<p class="copyright">Copyright © 2006-'+ new Date().getFullYear() +' <a href="http://www.doyoe.com/" rel="external" target="_blank">Doyoe</a>. All Rights Reserved</p>'
 		$('#rights').append(copyright);
 
 		//在页面的标题后面添加分享功能模块,复制链接等
@@ -917,7 +925,7 @@ if (!Global.isLocal && Global.name) {
 	//运行示例代码以及相关操作
 	(function(){
 		var example = $('#example'),
-			content = example.find('textarea').val(),
+			content = example.find('textarea'),
 			btnRun = example.find('.g-btn-sure');
 
 		if (example.length) {
@@ -942,14 +950,14 @@ if (!Global.isLocal && Global.name) {
 					click: function(e) {
 						e.preventDefault();
 						var codeWin = window.open();
-						codeWin.document.write(content);
+						codeWin.document.write(content.val());
 						codeWin.document.close();
 					}
 				});
 			}
 
 			//复制代码
-			Global.copy(example.find(".g-btn-copy"), content);
+			Global.copy(example.find(".g-btn-copy"), content.val());
 		}
 	})();
 
